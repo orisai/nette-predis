@@ -1,0 +1,34 @@
+extensions:
+	predis: OriNette\Predis\DI\PredisExtension
+	http: Nette\Bridges\HttpDI\HttpExtension
+	session: Nette\Bridges\HttpDI\SessionExtension
+
+predis:
+	connections:
+		first:
+			parameters:
+				scheme: tcp
+				host: 127.0.0.1
+				port: 6379
+				database: 1
+			autowired: true
+		second:
+			parameters:
+				scheme: tcp
+				host: 127.0.0.1
+				port: 6379
+				database: 2
+			autowired: false
+		third:
+			parameters:
+				scheme: tcp
+				host: 127.0.0.1
+				port: 6379
+				database: 3
+	session:
+		connection: first
+		sessionTtl: 1
+		lockTtl: 1
+
+session:
+	autoStart: false

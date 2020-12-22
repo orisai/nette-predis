@@ -1,0 +1,15 @@
+extensions:
+	predis: OriNette\Predis\DI\PredisExtension
+
+predis:
+	connections:
+		first:
+			parameters:
+				scheme: tcp
+				host: 127.0.0.1
+				port: 6379
+				database: 1
+	session:
+		connection: first
+		sessionTtl: 1
+		lockTtl: 1
