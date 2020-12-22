@@ -1,0 +1,8 @@
+extensions:
+	predis: OriNette\Predis\DI\PredisExtension
+
+predis:
+	session:
+		connection: unknown
+		sessionTtl: 1
+		lockTtl: 1
