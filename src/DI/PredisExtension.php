@@ -117,10 +117,10 @@ final class PredisExtension extends CompilerExtension
 				);
 		}
 
-		$sessionDef = $builder->getDefinitionByType(Session::class);
-		assert($sessionDef instanceof ServiceDefinition);
+		$sessionDefinition = $builder->getDefinitionByType(Session::class);
+		assert($sessionDefinition instanceof ServiceDefinition);
 
-		$sessionDef->addSetup('setHandler', [
+		$sessionDefinition->addSetup('setHandler', [
 			$builder->getDefinition($this->prefix('sessionHandler')),
 		]);
 	}
