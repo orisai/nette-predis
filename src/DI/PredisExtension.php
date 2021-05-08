@@ -113,7 +113,8 @@ final class PredisExtension extends CompilerExtension
 
 			throw InvalidState::create()
 				->withMessage(
-					"{$sessionClass} must be available in DI to configure {$sessionConfigKey}. Install nette/http and register {$sessionExtensionClass}.",
+					"{$sessionClass} must be available in DI to configure {$sessionConfigKey}. Install nette/http and " .
+					"register {$sessionExtensionClass}.",
 				);
 		}
 

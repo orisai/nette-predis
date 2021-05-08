@@ -75,7 +75,8 @@ final class PredisExtensionTest extends TestCase
 
 		$this->expectException(InvalidState::class);
 		$this->expectExceptionMessage(
-			'Nette\Http\Session must be available in DI to configure predis.session. Install nette/http and register Nette\Bridges\HttpDI\SessionExtension.',
+			'Nette\Http\Session must be available in DI to configure predis.session. Install nette/http and ' .
+			'register Nette\Bridges\HttpDI\SessionExtension.',
 		);
 
 		$configurator->createContainer();
