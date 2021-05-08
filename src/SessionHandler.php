@@ -13,9 +13,11 @@ final class SessionHandler implements SessionHandlerInterface
 {
 
 	private Client $client;
+
 	private LockFactory $lockFactory;
 
 	private int $sessionTtl;
+
 	private int $lockTtl;
 
 	/** @var array<string, LockInterface> */
