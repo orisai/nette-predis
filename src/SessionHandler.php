@@ -48,6 +48,7 @@ final class SessionHandler implements SessionHandlerInterface
 	/**
 	 * @param string $save_path
 	 * @param string $name
+	 *
 	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
 	 */
 	public function open($save_path, $name): bool
@@ -72,6 +73,7 @@ final class SessionHandler implements SessionHandlerInterface
 
 	/**
 	 * @param string $session_id
+	 *
 	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
 	 */
 	public function destroy($session_id): bool
@@ -87,6 +89,7 @@ final class SessionHandler implements SessionHandlerInterface
 
 	/**
 	 * @param int $maxlifetime
+	 *
 	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
 	 */
 	public function gc($maxlifetime): bool
@@ -96,6 +99,7 @@ final class SessionHandler implements SessionHandlerInterface
 
 	/**
 	 * @param string $session_id
+	 *
 	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
 	 */
 	public function read($session_id): string
@@ -116,6 +120,7 @@ final class SessionHandler implements SessionHandlerInterface
 	/**
 	 * @param string $session_id
 	 * @param string $session_data
+	 *
 	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
 	 */
 	public function write($session_id, $session_data): bool
