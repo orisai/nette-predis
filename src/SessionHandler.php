@@ -92,9 +92,9 @@ final class SessionHandler implements SessionHandlerInterface
 	 *
 	 * @phpcsSuppress SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
 	 */
-	public function gc($maxlifetime): bool
+	public function gc($maxlifetime): int
 	{
-		return true;
+		return 0;
 	}
 
 	/**
@@ -110,11 +110,7 @@ final class SessionHandler implements SessionHandlerInterface
 			$this->prefix($session_id),
 		);
 
-		if ($data === null) {
-			return '';
-		}
-
-		return $data;
+		return $data ?? '';
 	}
 
 	/**
