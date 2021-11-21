@@ -10,14 +10,28 @@ use Orisai\Exceptions\Logic\InvalidState;
 use PHPUnit\Framework\TestCase;
 use Predis\Client;
 use function dirname;
+use function mkdir;
+use const PHP_VERSION_ID;
 
 final class PredisExtensionTest extends TestCase
 {
 
+	private string $rootDir;
+
+	protected function setUp(): void
+	{
+		parent::setUp();
+
+		$this->rootDir = dirname(__DIR__, 3);
+		if (PHP_VERSION_ID < 81_000) {
+			@mkdir("$this->rootDir/var/build");
+		}
+	}
+
 	public function testMinimal(): void
 	{
-		$configurator = new ManualConfigurator(dirname(__DIR__, 3));
-		$configurator->setDebugMode(true);
+		$configurator = new ManualConfigurator($this->rootDir);
+		$configurator->setForceReloadContainer();
 		$configurator->addConfig(__DIR__ . '/config.minimal.neon');
 
 		$container = $configurator->createContainer();
@@ -29,8 +43,8 @@ final class PredisExtensionTest extends TestCase
 
 	public function testFull(): void
 	{
-		$configurator = new ManualConfigurator(dirname(__DIR__, 3));
-		$configurator->setDebugMode(true);
+		$configurator = new ManualConfigurator($this->rootDir);
+		$configurator->setForceReloadContainer();
 		$configurator->addConfig(__DIR__ . '/config.full.neon');
 
 		$container = $configurator->createContainer();
@@ -55,8 +69,8 @@ final class PredisExtensionTest extends TestCase
 
 	public function testInvalidSession(): void
 	{
-		$configurator = new ManualConfigurator(dirname(__DIR__, 3));
-		$configurator->setDebugMode(true);
+		$configurator = new ManualConfigurator($this->rootDir);
+		$configurator->setForceReloadContainer();
 		$configurator->addConfig(__DIR__ . '/config.invalidSession.neon');
 
 		$this->expectException(InvalidArgument::class);
@@ -69,8 +83,8 @@ final class PredisExtensionTest extends TestCase
 
 	public function testMissingSession(): void
 	{
-		$configurator = new ManualConfigurator(dirname(__DIR__, 3));
-		$configurator->setDebugMode(true);
+		$configurator = new ManualConfigurator($this->rootDir);
+		$configurator->setForceReloadContainer();
 		$configurator->addConfig(__DIR__ . '/config.missingSession.neon');
 
 		$this->expectException(InvalidState::class);
