@@ -1,4 +1,8 @@
-<h1 align="center">Orisai Nette Predis</h1>
+<h1 align="center">
+	<img src="https://github.com/orisai/.github/blob/main/images/repo_title.png" alt="Orisai"/>
+	<br/>
+	Nette Predis
+</h1>
 
 <p align="center">
 	<a href="https://github.com/predis/predis">Predis</a> integration into <a href="https://nette.org">Nette</a>
