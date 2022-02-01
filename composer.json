@@ -1,6 +1,6 @@
 {
 	"name": "orisai/nette-predis",
-	"description": "Predis integration into Nette",
+	"description": "Predis integration for Nette",
 	"keywords": [
 		"nette",
 		"orisai",
