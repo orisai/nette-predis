@@ -4,7 +4,7 @@ namespace Tests\OriNette\Predis\Unit\DI;
 
 use Nette\Http\Session;
 use OriNette\DI\Boot\ManualConfigurator;
-use OriNette\Predis\SessionHandler;
+use OriNette\Predis\Http\SessionHandler;
 use Orisai\Exceptions\Logic\InvalidArgument;
 use Orisai\Exceptions\Logic\InvalidState;
 use PHPUnit\Framework\TestCase;

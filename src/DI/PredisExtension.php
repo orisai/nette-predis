@@ -8,7 +8,7 @@ use Nette\DI\Definitions\ServiceDefinition;
 use Nette\Http\Session;
 use Nette\Schema\Expect;
 use Nette\Schema\Schema;
-use OriNette\Predis\SessionHandler;
+use OriNette\Predis\Http\SessionHandler;
 use Orisai\Exceptions\Logic\InvalidArgument;
 use Orisai\Exceptions\Logic\InvalidState;
 use Predis\Client;

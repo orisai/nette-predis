@@ -1,6 +1,6 @@
 <?php declare(strict_types = 1);
 
-namespace OriNette\Predis;
+namespace OriNette\Predis\Http;
 
 use Predis\Client;
 use SessionHandlerInterface;
